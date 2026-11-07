@@ -57,8 +57,7 @@ const LAUFBAND_FOTOS = [
   'fotos/fotoband/ChatGPT-Bild 3. Nov. 2026, 14_22_50-6.png', 'fotos/fotoband/ChatGPT-Bild 3. Nov. 2026, 14_22_51-7.png',
   'fotos/fotoband/ChatGPT-Bild 3. Nov. 2026, 14_22_52-8.png', 'fotos/fotoband/ChatGPT-Bild 3. Nov. 2026, 14_22_53-9.png',
   'fotos/fotoband/ChatGPT-Bild 3. Nov. 2026, 14_22_55-10.png', 'fotos/fotoband/Festliche Katze im Weihnachtsambiente-6.png',
-  'fotos/fotoband/Festliche Katze mit Nikolausmütze-5.png', 'fotos/fotoband/Festliche Weihnachtskatze mit Goldglöckchen-1.png',
-  'fotos/fotoband/Festliches Katzenporträt mit Weihnachtsmütze-3.png', 'fotos/fotoband/Festliches Winterporträt mit Katze-4.png',
-  'fotos/fotoband/IMG_5934.jpg', 'fotos/fotoband/IMG_9852.jpg', 'fotos/fotoband/Kuschelige Weihnachtskatze mit Glöckchen-7.png',
+  'fotos/fotoband/Festliches Winterporträt mit Katze-4.png', 'fotos/fotoband/IMG_5934.jpg',
+  'fotos/fotoband/IMG_9852.jpg',
   'fotos/fotoband/Weihnachtskatze mit Glöckchen-1.png'
 ];
