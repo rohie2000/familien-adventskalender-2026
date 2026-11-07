@@ -40,13 +40,24 @@ document.getElementById('today').textContent=preview?'Vorschau – alle Türchen
 const viewed=new Set();
 for(let day=1;day<=24;day++){
  const owner=people[(day-1)%3],unlocked=preview||day<=current;
- const button=document.createElement('button');button.className='door'+(unlocked?' opened':'');button.disabled=!unlocked;
+ const button=document.createElement('button');button.className=`door door--${owner.toLowerCase()}`+(unlocked?' opened':'');button.disabled=!unlocked;
  button.innerHTML=`<span class="number">${day}</span><span class="owner">${owner.toUpperCase()}</span><span class="state">${unlocked?'✉ Öffnen':'🔒 Verschlossen'}</span>`;
  button.addEventListener('click',()=>showDoor(day,owner));doors.append(button);
 }
 let spoken='';const dialog=document.getElementById('giftDialog');const content=document.getElementById('giftContent');
 const read=document.getElementById('read');const stopButton=document.getElementById('stop');
 function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel()}
+function wireClickToPlay(videoId,source){
+ const video=document.getElementById(videoId);if(!video)return;
+ video.src=source;
+ const button=document.querySelector(`[data-video-target="${videoId}"]`);
+ const toggle=()=>{if(video.paused)video.play().catch(()=>{});else video.pause()};
+ video.addEventListener('click',toggle);button?.addEventListener('click',toggle);
+ video.addEventListener('play',()=>{if(button)button.textContent='❚❚ Video pausieren'});
+ video.addEventListener('pause',()=>{if(button)button.textContent='▶ Adventsgrüße starten'});
+}
+wireClickToPlay('headerVideo',KOPF_VIDEO);
+wireClickToPlay('footerVideo',ABSCHLUSS_VIDEO);
 function showDoor(day,owner){
  stopSpeech();spoken='';read.hidden=true;stopButton.hidden=true;
  const [emoji,title,body]=gifts[owner][Math.floor((day-1)/3)];
@@ -83,6 +94,7 @@ stopButton.onclick=stopSpeech;
 // Kontinuierliches Fotolaufband; doppelte Liste für nahtlose Schleife.
 const track=document.getElementById('photoTrack');
 if(LAUFBAND_FOTOS.length){
+ track.style.setProperty('--scroll-duration',`${Math.max(65,LAUFBAND_FOTOS.length*4)}s`);
  for(let copy=0;copy<2;copy++){
   const group=document.createElement('div');group.className='track-group';if(copy===1)group.setAttribute('aria-hidden','true');
   LAUFBAND_FOTOS.forEach((path,i)=>{const frame=document.createElement('figure');frame.className='track-photo';const img=document.createElement('img');img.src=path;img.loading='lazy';img.alt=copy===0?`Familienerinnerung ${i+1}`:'';frame.append(img);group.append(frame)});
