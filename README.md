@@ -21,7 +21,7 @@ Die Seite ist eine reine GitHub-Pages-Webseite: kein Azure, kein Login und kein 
 
 ## Foto oder Video für jedes Türchen
 
-Die 24 vorhandenen Türchenbilder sind bereits eingetragen. Das Weihnachtsvideo ist hinter dem 24. Türchen eingebunden. In `config.js` lässt sich jede Zuordnung ändern:
+Die 24 vorhandenen Türchenbilder sind bereits passend nach Lena, Celine und Leon eingetragen. In `config.js` lässt sich jede Zuordnung ändern:
 
 ```js
 1: {typ:'foto', datei:'fotos/foto-01.jpg'},
@@ -31,9 +31,13 @@ Die 24 vorhandenen Türchenbilder sind bereits eingetragen. Das Weihnachtsvideo 
 Neue Medien in den entsprechenden Ordner legen. Bei Videos zeigt ein Klick auf die Fläche den Geschenktext; die Videosteuerung erlaubt Abspielen und Pausieren. Ein leerer Eintrag zeigt einen Platzhalter.
 
 ## Kontinuierliches Fotolaufband
-In `config.js` das Array `LAUFBAND_FOTOS` ändern. Es enthält bereits 20 Fotos. Es können beliebig viele vorhandene oder neue Fotos in gewünschter Reihenfolge stehen. Die Auswahl ist unabhängig von den Türchen-Medien. Der Lauf pausiert beim Überfahren mit der Maus und wird bei reduzierter Bewegung nicht automatisch animiert.
+In `config.js` das Array `LAUFBAND_FOTOS` ändern. Es enthält bereits alle 69 Fotos aus dem Ordner `Fotoband`. Die Auswahl ist unabhängig von den Türchen-Medien. Der Lauf pausiert beim Überfahren mit der Maus und wird bei reduzierter Bewegung nicht automatisch animiert.
+
+## Adventsgrüße-Videos
+
+`Adventsgrüße-1.mp4` erscheint mittig bei den drei Bildern im Kopfbereich. `Adventsgrüße-2.mp4` steht unter dem Fotoband. Beide starten und pausieren durch Antippen.
 
 ## Hinweise
 - Es werden keine Daten an einen eigenen Server gesendet; die Vorlesefunktion verwendet die Sprachsynthese des Browsers.
-- Das Projekt ist mit etwa 47 MB noch gut für GitHub Pages geeignet. Für zusätzliche Videos empfiehlt sich eine komprimierte MP4-Datei.
+- Das Projekt ist mit etwa 203 MB noch für GitHub Pages geeignet, braucht beim ersten Aufruf aber etwas länger. Für weitere Medien empfiehlt sich eine komprimierte MP4- oder WebP-Datei.
 - Der Kalender öffnet ab 1. Dezember 2026 täglich ein weiteres Türchen; vergangene bleiben für alle drei sichtbar.
