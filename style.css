@@ -13,3 +13,6 @@
 
 /* Klickbare Weihnachtsgrüße oben und unter dem Fotoband. */
 .video-polaroid{position:relative}.polaroids .video-polaroid video{width:100%;height:clamp(100px,18vw,170px);object-fit:cover;margin:0;border-radius:0;cursor:pointer}.play-video{border:0;border-radius:999px;background:#5b413bdd;color:#fffaf2;font:600 12px system-ui;padding:8px 11px;cursor:pointer}.video-polaroid .play-video{position:absolute;left:50%;top:auto;bottom:45px;transform:translateX(-50%);white-space:nowrap}.video-greeting{margin:54px 0 18px}.video-frame{position:relative;max-width:680px;margin:16px auto 0;background:#fffaf2;padding:10px;box-shadow:0 7px 24px #543a2a29}.video-frame video{display:block;width:100%;margin:0;cursor:pointer;background:#30231f}.video-frame .play-video{position:absolute;left:50%;bottom:24px;transform:translateX(-50%)}
+
+/* Klick auf ein Bild im Laufband öffnet es groß. */
+.track-photo img{cursor:zoom-in}.photo-dialog{max-width:min(94vw,980px);padding:14px;background:#fffaf2}.photo-dialog .close{position:absolute;z-index:1;right:12px;top:8px;width:42px;height:42px;border-radius:50%;background:#fffaf2e8;color:#5a352f;line-height:1}.photo-dialog img{display:block;max-width:100%;max-height:78vh;margin:auto;object-fit:contain}.photo-dialog p{text-align:center;margin:12px 48px 4px;color:#745a49;font:14px system-ui}

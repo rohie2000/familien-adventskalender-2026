@@ -1,3 +1,16 @@
+// Fotogroßansicht für das Laufband.
+const photoDialog=document.createElement('dialog');photoDialog.className='photo-dialog';
+const photoClose=document.createElement('button');photoClose.className='close';photoClose.type='button';photoClose.setAttribute('aria-label','Foto schließen');photoClose.textContent='×';
+const photoPreview=document.createElement('img');const photoCaption=document.createElement('p');
+photoDialog.append(photoClose,photoPreview,photoCaption);document.body.append(photoDialog);
+function showPhoto(path,alt){photoPreview.src=path;photoPreview.alt=alt;photoCaption.textContent=alt;photoDialog.showModal()}
+photoClose.onclick=()=>photoDialog.close();
+photoDialog.addEventListener('close',()=>photoPreview.removeAttribute('src'));
+document.addEventListener('click',event=>{
+ const image=event.target.closest('#photoTrack .track-group:not([aria-hidden]) .track-photo img');
+ if(image)showPhoto(image.currentSrc||image.src,image.alt);
+});
+
 const people=['Lena','Celine','Leon'];
 // Die 8 Geschenke pro Person entsprechen jeweils ihrem 1. bis 8. Türchen.
 const gifts={
